@@ -24,6 +24,11 @@ public class Controller {
         messages.add(message);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteMessage(@PathVariable String id){
+        messages.removeIf(message -> message.getId().equals(id));
+    }
+
 //    @PostMapping
 //    public Message postMessage(@RequestBody String id,
 //                               @RequestBody String name,
